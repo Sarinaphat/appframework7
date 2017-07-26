@@ -1,16 +1,35 @@
 import React from 'react';
 import {Page, ContentBlock, Navbar,List,ListItem,FormInput,GridRow,GridCol,Button} from 'framework7-react';
 
-export const findmin = () => {
+export default class findmin extends React.Component {
 
-      var points=()=>{
-        var input1,input2,input3,input4,input5=this.state;
-        var points=[0];
-        points.sort(function(a, b){return b-a});
-        this.setState({points:{result}});
+  constructor(props){
+    super(props);
+    this.state = {input1:0,input2:0,input3:0,input4:0,input5:0,min:0}
+  }
+       points=()=>{
+        // var input1,input2,input3,input4,input5=this.state;
+        // var points=[0];
+        var {input1,input2,input3,input4,input5,min} = this.state;
+
+        var stringInput = input1+"|"+input2+"|"+input3+"|"+input4+"|"+input5;
+        console.log(stringInput);
+
+        var dataArray = stringInput.split("|");
+        console.log(dataArray);
+        min = 1000000;
+
+        for (var i = 0; i < dataArray.length; i++) {
+          if(parseInt(dataArray[i])<min){
+            min = dataArray[i];
+          }
+        }
+
+        this.setState({min});
       }
 
-  // var {result,points}=this.state;
+
+      render(){
 
     return (
 
@@ -20,32 +39,31 @@ export const findmin = () => {
 
             <List form>
                 <ListItem>
-                    <FormInput type="number" value="" placeholder="number"
+                    <FormInput type="number" value={this.state.input1} placeholder="number"
                     onChange={(e)=>this.setState({input1:parseInt(e.target.value)})} />
                 </ListItem>
                 <ListItem>
-                    <FormInput type="number" value="" placeholder="number"
+                    <FormInput type="number" value={this.state.input2} placeholder="number"
                     onChange={(e)=>this.setState({input2:parseInt(e.target.value)})} />
                 </ListItem>
                 <ListItem>
-                    <FormInput type="number" value="" placeholder="number"
+                    <FormInput type="number" value={this.state.input3} placeholder="number"
                     onChange={(e)=>this.setState({input3:parseInt(e.target.value)})} />
                 </ListItem>
                 <ListItem>
-                    <FormInput type="number" value="" placeholder="number"
+                    <FormInput type="number" value={this.state.input4} placeholder="number"
                     onChange={(e)=>this.setState({input4:parseInt(e.target.value)})} />
                 </ListItem>
                 <ListItem>
-                    <FormInput type="number" value="" placeholder="number"
+                    <FormInput type="number" value={this.state.input5} placeholder="number"
                     onChange={(e)=>this.setState({input5:parseInt(e.target.value)})} />
                 </ListItem>
                 </List>
                 <List form>
-                    <ListItem>
-                        <FormInput type="number" value="" placeholder="sort"  />
+                    <ListItem title={this.state.min}>
                     </ListItem>
                 </List>
-                {result}
+
                   <GridRow >
                       <GridCol><Button big fill color="blue" onClick={this.points}>min</Button></GridCol>
                   </GridRow>
@@ -55,4 +73,5 @@ export const findmin = () => {
             </ContentBlock>
         </Page>
     );
+  }
 };

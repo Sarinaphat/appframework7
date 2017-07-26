@@ -5,7 +5,7 @@ export default class CaseImplementCreateForm extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {input1:0,input2:0,input3:0,input4:0,input5:0,min:0}
+    
   }
 
 

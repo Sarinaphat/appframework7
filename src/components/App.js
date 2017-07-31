@@ -111,7 +111,7 @@ const MainViews = (props, context) => {
 							<ListItem link="/appointmentform/" title="AppointmentForm"></ListItem>
 							<ListItem link="/casestatusbutton/" title="CaseStatusButton"></ListItem>
 							<ListItem link="/profile/" title="Profile"></ListItem>
-							
+							<ListItem link="/worklog/" title="Worklog"></ListItem>
 							<ListItem link="/approve/" title="Approve"></ListItem>
 
 						</List>

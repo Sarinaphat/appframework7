@@ -5,7 +5,7 @@ import CaseImplementCreateForm from './components/pages/CaseImplementCreateForm'
 import AppointmentForm from './components/pages/AppointmentForm';
 import CaseStatusButton from './components/pages/CaseStatusButton';
 import Profile from './components/pages/Profile';
-// import Worklog from './components/pages/Worklog';
+import Worklog from './components/pages/Worklog';
 import Approve from './components/pages/Approve';
 
 export const routes = [{
@@ -30,10 +30,10 @@ export const routes = [{
   path: '/profile/',
   component: Profile
 }
-// , {
-//   path: '/worklog/',
-//   component: Worklog
-// }
+, {
+  path: '/worklog/',
+  component: Worklog
+}
 , {
   path: '/approve/',
   component: Approve

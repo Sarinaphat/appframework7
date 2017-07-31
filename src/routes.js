@@ -29,10 +29,12 @@ export const routes = [{
 }, {
   path: '/profile/',
   component: Profile
-}, {
+}
+, {
   path: '/worklog/',
   component: Worklog
-}, {
+}
+, {
   path: '/approve/',
   component: Approve
 }];
